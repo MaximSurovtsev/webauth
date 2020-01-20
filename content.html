@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Secret content</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.box {
+			max-width: 900px;
+			margin: auto;
+			width: 95%;
+			font-family: monospace;
+			font-size: 20px;
+			line-height: 1.5;
+			text-align: justify;
+		}
+
+		.title {
+			font-size: 10vmin;
+	
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1 class="title">Secret content</h1>
+		<button class="btn sign-out">Sign Out</button>
+		<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum iure laborum ratione nisi veritatis cum libero est neque culpa amet, quasi aliquid veniam cupiditate, aut nostrum officia quibusdam aperiam!</p>
+		<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde impedit explicabo beatae repellat, blanditiis illo, porro, quis, laboriosam numquam voluptas id suscipit aperiam dicta laudantium reiciendis quaerat facere consequatur natus et ratione culpa at. Impedit est fugit nisi ducimus quisquam quasi modi dolores accusamus quis voluptate voluptas temporibus earum, aspernatur, quas quidem aperiam ad, perferendis deserunt odit perspiciatis quo et veritatis voluptatem? Natus a facere suscipit expedita itaque sapiente ducimus in magnam provident, nulla incidunt quibusdam laudantium consectetur aperiam inventore, maxime ut veniam iure, temporibus? Voluptatum autem voluptatem error molestiae nobis, deserunt eius reiciendis veniam optio sit et, debitis recusandae consequatur quae illum. Asperiores eius, ratione expedita tempore accusantium doloribus mollitia repellendus libero itaque, debitis fuga, fugit, repellat veritatis corporis? Mollitia eligendi aperiam porro pariatur doloremque doloribus ducimus, at molestiae laborum sit quis corporis eveniet autem a nesciunt labore sequi iure explicabo illum atque repellendus sapiente dolorem modi omnis? Id et velit ipsam ipsa expedita adipisci voluptates placeat hic vero, culpa illum obcaecati quam veniam. Reiciendis, quis nisi id voluptatum omnis voluptates molestiae sed rem, tenetur laudantium eligendi sit officiis, odio doloribus blanditiis. Harum earum autem, doloribus quas quia quasi commodi aliquid labore, voluptatem odio molestias sed illum. Beatae, nobis.</p>
+		<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quia aut laborum cupiditate ducimus. Reprehenderit aspernatur, non perferendis. Pariatur ad magnam, ea quae, esse nobis voluptas quaerat nulla minus laborum itaque accusamus iure nesciunt temporibus unde repellendus nemo eaque dicta aliquam ducimus laudantium doloribus. Hic quaerat veniam voluptatibus nulla quas dolor nisi a quod vitae nesciunt harum commodi vero ex obcaecati eveniet, esse adipisci sapiente, quidem magni non temporibus corrupti. Perferendis totam perspiciatis illum quisquam tempore, officia eveniet quod fugit debitis eos, rem quas sequi, recusandae ratione nobis adipisci ex cum dolorem. A, repellendus. Veniam officia in pariatur praesentium aperiam.</p>
+	</div>
+	 <script src='/client.js'></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const client = new Client()
+			console.log('Oke');
+
+			// const namefield = document.querySelector('.name');
+			// const usernamefield = document.querySelector('.username');
+			const signout = document.querySelector('.sign-out');
+
+			signout.addEventListener('click', function() {
+				let ans = client.logout();
+				ans.then(function(v) {
+				if (v.status == 'ok') {
+					window.location = '/login';
+				}
+			})
+			})
+			
+			
+		})
+
+	</script>
+</body>
+</html>

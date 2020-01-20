@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My app</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h1 class="title">Sign In</h1>
+        <div class="form-wrapper">
+          <input type="text" class="input username" placeholder="Enter your  username...">
+          <!-- <input type="text" class="input secret" placeholder="Enter your name..." > -->
+          <div class="btn-wrapper">
+            <button class="btn log">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <script src='/client.js'></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const client = new Client()
+      console.log('Oke');
+
+      // const namefield = document.querySelector('.name');
+      const usernamefield = document.querySelector('.username');
+      const log = document.querySelector('.log');
+      
+      log.addEventListener('click', function() {
+        let username = usernamefield.value;
+        let ans = client.login({username});
+        ans.then(function(v) {
+        if (v.status == 'ok') {
+          window.location = '/content';
+        }
+      })
+      })
+      
+      
+    })
+
+  </script>
+  </body>
+</html>

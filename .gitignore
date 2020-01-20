@@ -1,0 +1,4 @@
+node_modules/
+db/
+nikto/
+.DS_STORE
